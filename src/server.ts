@@ -3,11 +3,14 @@ import "reflect-metadata"
 import { buildSchema } from 'type-graphql'
 import { AppointmentsResolver } from './appointments/resolvers/appointments-resolver'
 import path from 'node:path'
+import { Container } from 'typedi'
+
 
 async function bootstrap() {
   const schema = await buildSchema({
     resolvers: [AppointmentsResolver],
-    emitSchemaFile: path.resolve(__dirname, 'schema.gql')
+    emitSchemaFile: path.resolve(__dirname, 'schema.gql'),
+    container: Container
   })
 
   const server = new ApolloServer({
