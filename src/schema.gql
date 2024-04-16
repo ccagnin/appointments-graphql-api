@@ -4,6 +4,7 @@
 # -----------------------------------------------
 
 type Appointment {
+  customer: Customer!
   endsAt: String!
   startsAt: String!
 }
@@ -12,6 +13,10 @@ input CreateAppointmentInput {
   customerId: String!
   endsAt: String!
   startsAt: String!
+}
+
+type Customer {
+  name: String!
 }
 
 type Mutation {
