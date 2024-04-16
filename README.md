@@ -3,6 +3,7 @@
 Esse projeto tem como objetivo criar uma API simples apenas para estudo de GraphQL e TypeORM. A ideia é criar um sistema de agendamento de petshop, onde o usuário pode agendar um horário para levar seu pet para um banho e tosa ou uma consulta.
 
 ## Tecnologias
+- Typescript
 - Node.js
 - GraphQL
 - TypeORM
