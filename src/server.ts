@@ -4,9 +4,15 @@ import { buildSchema } from 'type-graphql'
 import { AppointmentsResolver } from './appointments/resolvers/appointments-resolver'
 import path from 'node:path'
 import { Container } from 'typedi'
+import { createConnection, useContainer as useContainerTypeOrm } from 'typeorm'
 
-
-async function bootstrap() {
+useContainerTypeOrm(Container);
+createConnection({
+  type: "sqlite",
+  database: "database.sqlite",
+  entities: [__dirname + "/**/*-model.ts"],
+  synchronize: true,
+}).then(async () => {
   const schema = await buildSchema({
     resolvers: [AppointmentsResolver],
     emitSchemaFile: path.resolve(__dirname, 'schema.gql'),
@@ -19,6 +25,6 @@ async function bootstrap() {
   const { url } = await server.listen(4000)
 
   console.log(`Server is running, GraphQL Playground available at ${url}`)
-}
-
-bootstrap()
+}).catch(err => {
+  console.error("Error starting server: ", err);
+});

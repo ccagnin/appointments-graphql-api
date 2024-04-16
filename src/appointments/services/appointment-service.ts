@@ -1,22 +1,23 @@
 import { Service } from 'typedi'
 import { CreateAppointmentInput } from '../dtos/inputs/create-appointment-input'
 import { Appointment } from '../dtos/models/appointment-model'
+import { Repository } from 'typeorm'
+import { InjectRepository } from 'typeorm-typedi-extensions'
 
 @Service()
 export class AppointmentService {
+  constructor(
+    @InjectRepository(Appointment)
+    private appointmentRepository: Repository<Appointment>) {}
+
   async createAppointment(data: CreateAppointmentInput): Promise<Appointment>{
-    return {
-      startsAt: data.startsAt,
-      endsAt: data.endsAt
-    }
+    const appointment = this.appointmentRepository.create(data)
+    await this.appointmentRepository.save(appointment)
+    return appointment
   }
 
   async getAppointments(): Promise<Appointment[]> {
-    return [
-      {
-        startsAt: new Date().toISOString(),
-        endsAt: new Date().toISOString()
-      }
-    ]
+    return this.appointmentRepository.find()
   }
 }
+

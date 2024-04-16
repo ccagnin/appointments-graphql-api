@@ -9,8 +9,4 @@ export class CreateAppointmentInput {
   @Field()
   @IsDateString()
   startsAt: string;
-
-  @Field()
-  @IsDateString()
-  endsAt: string;
 }

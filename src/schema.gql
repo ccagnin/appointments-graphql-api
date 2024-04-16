@@ -5,19 +5,19 @@
 
 type Appointment {
   customer: Customer!
-  endsAt: String!
+  endsAt: String
+  id: ID!
   startsAt: String!
 }
 
 input CreateAppointmentInput {
   customerId: String!
-  endsAt: String!
   startsAt: String!
 }
 
 type Customer {
   email: String!
-  id: String!
+  id: ID!
   name: String!
   phone: String!
 }
