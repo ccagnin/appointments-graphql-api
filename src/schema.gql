@@ -12,6 +12,7 @@ type Appointment {
 
 input CreateAppointmentInput {
   customerId: String!
+  petId: String!
   startsAt: String!
 }
 

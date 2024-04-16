@@ -7,6 +7,9 @@ export class CreateAppointmentInput {
   customerId: string;
 
   @Field()
+  petId: string;
+
+  @Field()
   @IsDateString()
   startsAt: string;
 }
