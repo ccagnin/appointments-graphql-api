@@ -1,7 +1,7 @@
 import { ApolloServer } from 'apollo-server'
 import "reflect-metadata"
 import { buildSchema } from 'type-graphql'
-import { AppointmentsResolver } from './resolvers/appointments-resolver'
+import { AppointmentsResolver } from './appointments/resolvers/appointments-resolver'
 import path from 'node:path'
 
 async function bootstrap() {

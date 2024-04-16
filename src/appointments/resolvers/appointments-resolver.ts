@@ -1,7 +1,7 @@
 import { Resolver, Mutation, Arg, Query, FieldResolver, Root } from 'type-graphql';
-import { CreateAppointmentInput } from '../dtos/inputs/create-appointment-input'
-import { Appointment } from '../dtos/models/appointment-model'
-import { Customer } from '../dtos/models/customer-model'
+import { CreateAppointmentInput } from '../../dtos/inputs/create-appointment-input'
+import { Appointment } from '../../dtos/models/appointment-model'
+import { Customer } from '../../customer/dtos/models/customer-model'
 
 @Resolver(() => Appointment)
 export class AppointmentsResolver{

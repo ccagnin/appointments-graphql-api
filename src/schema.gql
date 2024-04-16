@@ -16,7 +16,10 @@ input CreateAppointmentInput {
 }
 
 type Customer {
+  email: String!
+  id: String!
   name: String!
+  phone: String!
 }
 
 type Mutation {
