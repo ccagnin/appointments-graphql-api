@@ -16,6 +16,12 @@ input CreateAppointmentInput {
   startsAt: String!
 }
 
+input CreateCustomerInput {
+  email: String!
+  name: String!
+  phone: String!
+}
+
 type Customer {
   email: String!
   id: ID!
@@ -25,8 +31,10 @@ type Customer {
 
 type Mutation {
   createAppointment(data: CreateAppointmentInput!): Appointment!
+  createCustomer(data: CreateCustomerInput!): Customer!
 }
 
 type Query {
   appointments: [Appointment!]!
+  customers: [Customer!]!
 }

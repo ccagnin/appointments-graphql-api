@@ -5,6 +5,7 @@ import { AppointmentsResolver } from './appointments/resolvers/appointments-reso
 import path from 'node:path'
 import { Container } from 'typedi'
 import { createConnection, useContainer as useContainerTypeOrm } from 'typeorm'
+import { CustomerResolver } from './customer/resolvers/customer-resolver'
 
 useContainerTypeOrm(Container);
 createConnection({
@@ -14,7 +15,7 @@ createConnection({
   synchronize: true,
 }).then(async () => {
   const schema = await buildSchema({
-    resolvers: [AppointmentsResolver],
+    resolvers: [AppointmentsResolver, CustomerResolver],
     emitSchemaFile: path.resolve(__dirname, 'schema.gql'),
     container: Container
   })
