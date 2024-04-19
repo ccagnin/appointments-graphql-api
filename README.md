@@ -15,7 +15,8 @@ Esse projeto tem como objetivo criar uma API simples apenas para estudo de Graph
 A arquitetura do projeto foi baseada em monolito, onde todos os arquivos estão no mesmo projeto. A ideia é criar um projeto simples para estudo de GraphQL. Também foi utilizado injenção de dependência e separação de responsabilidades.
 
 ## Próximos passos
-- [ ] Implementar serviços do customer e pet
+- [x] Implementar serviços do customer e pet
+- [ ] Refactor do serviço de appointments
 - [ ] Implementar CRUD de agendamento, customer e pet
 - [ ] Implementar testes unitários
 - [ ] Implementar novas funcionalidades
