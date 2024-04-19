@@ -1,5 +1,5 @@
 import { Field, ObjectType } from 'type-graphql'
-import { Column, Entity, Generated, ManyToOne, OneToOne, PrimaryGeneratedColumn } from 'typeorm'
+import { Column, Entity, Generated, ManyToOne, PrimaryGeneratedColumn } from 'typeorm'
 import { Customer } from '../../../customer/dtos/models/customer-model'
 
 

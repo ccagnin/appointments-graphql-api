@@ -28,4 +28,12 @@ export class CustomerService {
   async getCustomers(): Promise<Customer[]> {
     return this.customerService.find()
   }
+
+  async getCustomerById(id: string): Promise<Customer> {
+    const customer = await this.customerService.findOne({ where: { id } })
+    if (!customer) {
+      throw new Error('Customer not found')
+    }
+    return customer
+  }
 }
