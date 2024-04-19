@@ -13,13 +13,14 @@ export class AppointmentsResolver{
 
   @Query(() => [Appointment])
   async appointments(): Promise<Appointment[]>{
-    return this.appointmentsService.getAppointments();
+    return this.appointmentsService.getAppointments()
   }
 
   @Mutation(() => Appointment)
   async createAppointment(@Arg('data') data: CreateAppointmentInput): Promise<Appointment>{
-    return this.appointmentsService.createAppointment(data);
+    return this.appointmentsService.createAppointment(data)
   }
+
 
   @FieldResolver(() => Customer)
   async customer(@Root() appointment: Appointment) {

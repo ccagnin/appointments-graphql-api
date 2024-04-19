@@ -17,5 +17,5 @@ A arquitetura do projeto foi baseada em monolito, onde todos os arquivos estão 
 ## Próximos passos
 - [ ] Implementar serviços do customer e pet
 - [ ] Implementar CRUD de agendamento, customer e pet
-- [ ] Implementar testes de integração
+- [ ] Implementar testes unitários
 - [ ] Implementar novas funcionalidades
